@@ -35,7 +35,7 @@ public class SearchResultViewModel extends ViewModel {
             @Override
             public void onResponse(Call<SearchResult> call, Response<SearchResult> response) {
                 Log.w(TAG, "onResponse");
-                if (response.body() == null) {
+                if (!response.isSuccessful() || response.body() == null) {
                     Log.w(TAG, "No valid response");
                     return;
                 }
@@ -44,7 +44,7 @@ public class SearchResultViewModel extends ViewModel {
 
             @Override
             public void onFailure(Call<SearchResult> call, Throwable t) {
-                Log.w(TAG, "OnFailure");
+                Log.w(TAG, "OnFailure" + t.getMessage());
             }
         });
     }
