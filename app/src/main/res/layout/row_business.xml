@@ -16,7 +16,7 @@
         android:background="@drawable/bg_image_border"
         android:padding="@dimen/dp3"
         android:scaleType="fitXY"
-        android:visibility="gone"
+        android:visibility="visible"
         android:layout_gravity="center_vertical"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -37,10 +37,10 @@
 
         <RatingBar
             android:id="@+id/rb_ratingBar"
-            style="@android:style/Widget.DeviceDefault.Light.RatingBar"
+            style="@android:style/Widget.Holo.RatingBar.Small"
             android:layout_gravity="left"
             android:layout_width="wrap_content"
-            android:layout_height="@dimen/dp45"
+            android:layout_height="wrap_content"
             android:visibility="visible"
             android:progressTint="@color/design_default_color_secondary_variant"
             android:numStars="5"
@@ -50,11 +50,20 @@
             android:rating="4"
             android:stepSize="0.5" />
 
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:padding="@dimen/dp1"
+            android:textColor="@color/black" />
+
         <TextView
             android:id="@+id/tv_business_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="gone"
+            android:visibility="visible"
             android:padding="@dimen/dp1"
             android:textColor="@color/black" />
 

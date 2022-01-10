@@ -23,12 +23,10 @@ import retrofit2.Response;
 public class SearchResultViewModel extends ViewModel {
 
     private Map<String, List<Business>> categoryMap;
-//    private List<Business> businessList;
     private MutableLiveData<List<Business>> businessLiveData = new MutableLiveData<>();
     private String TAG = "Search";
 
     public void searchYelpApi(String term, String location) {
-//        businessList = new ArrayList<>();
 
         new YelpRetrofit()
                 .getRetrofitInstance()
@@ -41,7 +39,6 @@ public class SearchResultViewModel extends ViewModel {
                     Log.w(TAG, "No valid response");
                     return;
                 }
-//                businessList.addAll(response.body().getBusinesses());
                 businessLiveData.postValue(response.body().getBusinesses());
             }
 

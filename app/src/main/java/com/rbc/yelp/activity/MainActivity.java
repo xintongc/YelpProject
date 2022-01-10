@@ -96,6 +96,7 @@ public class MainActivity extends AppCompatActivity {
         for (Business business : businessList) {
             View view = inflater.inflate(R.layout.row_business, mLlSearchResultList, false);
             ((TextView) view.findViewById(R.id.tv_business_name)).setText(business.getName());
+            ((TextView) view.findViewById(R.id.tv_address)).setText(getString(R.string.address) + business.getLocation().getAddress1());
             ((TextView) view.findViewById(R.id.tv_business_category)).setText(getString(R.string.category) + business.getCategories().toString().substring(1, business.getCategories().toString().length() -1));
             ((RatingBar) view.findViewById(R.id.rb_ratingBar)).setRating(business.getRating().floatValue());
             Glide.with(view.getContext()).load(business.getImageUrl()).into((ImageView) view.findViewById(R.id.iv_imageView));
@@ -104,10 +105,12 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     if (((TextView) view.findViewById(R.id.tv_business_category)).getVisibility() == View.GONE) {
                         ((TextView) view.findViewById(R.id.tv_business_category)).setVisibility(View.VISIBLE);
+                        ((TextView) view.findViewById(R.id.tv_address)).setVisibility(View.VISIBLE);
                         ((ImageView) view.findViewById(R.id.iv_imageView)).setVisibility(View.VISIBLE);
                         ((RatingBar) view.findViewById(R.id.rb_ratingBar)).setVisibility(View.VISIBLE);
                     } else {
                         ((TextView) view.findViewById(R.id.tv_business_category)).setVisibility(View.GONE);
+                        ((TextView) view.findViewById(R.id.tv_address)).setVisibility(View.GONE);
                         ((ImageView) view.findViewById(R.id.iv_imageView)).setVisibility(View.GONE);
                         ((RatingBar) view.findViewById(R.id.rb_ratingBar)).setVisibility(View.GONE);
                     }

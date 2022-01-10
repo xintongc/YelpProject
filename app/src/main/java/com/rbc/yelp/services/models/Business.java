@@ -18,8 +18,6 @@ public class Business {
     private String imageUrl;
     @SerializedName("rating")
     private Double rating;
-    @SerializedName("phone")
-    private String phone;
     @SerializedName("location")
     private Location location;
 
@@ -37,10 +35,6 @@ public class Business {
 
     public List<Category> getCategories() {
         return categories;
-    }
-
-    public String getPhone() {
-        return phone;
     }
 
     public Location getLocation() {
