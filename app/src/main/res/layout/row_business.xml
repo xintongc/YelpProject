@@ -7,37 +7,42 @@
     android:layout_height="wrap_content"
     android:background="@drawable/bg_border"
     android:orientation="horizontal"
-    android:padding="@dimen/dp18">
+    android:padding="@dimen/dp13">
 
     <ImageView
-        android:paddingTop="@dimen/dp10"
-        android:id="@+id/imageView"
-        android:layout_width="@dimen/dp100"
-        android:layout_height="@dimen/dp100"
+        android:id="@+id/iv_imageView"
+        android:layout_width="@dimen/dp80"
+        android:layout_height="@dimen/dp80"
+        android:background="@drawable/bg_image_border"
+        android:padding="@dimen/dp3"
+        android:scaleType="fitXY"
         android:visibility="gone"
+        android:layout_gravity="center_vertical"
         tools:srcCompat="@tools:sample/avatars" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/dp8">
+        android:paddingVertical="@dimen/dp4"
+        android:paddingLeft="@dimen/dp6">
 
         <TextView
-            android:id="@+id/tv_business"
+            android:id="@+id/tv_business_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/dp1"
-            android:textSize="@dimen/textsize_16"
-            android:text="name"
+            android:textSize="@dimen/size_16"
             android:textColor="@color/black" />
 
         <RatingBar
-            android:id="@+id/ratingBar"
+            android:id="@+id/rb_ratingBar"
             style="@android:style/Widget.DeviceDefault.Light.RatingBar"
+            android:layout_gravity="left"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/dp45"
-            android:visibility="gone"
+            android:visibility="visible"
+            android:progressTint="@color/design_default_color_secondary_variant"
             android:numStars="5"
             android:padding="@dimen/dp1"
             android:isIndicator="true"
