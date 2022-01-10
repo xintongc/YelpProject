@@ -14,7 +14,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import androidx.lifecycle.MediatorLiveData;
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -23,12 +23,12 @@ import retrofit2.Response;
 public class SearchResultViewModel extends ViewModel {
 
     private Map<String, List<Business>> categoryMap;
-    private List<Business> businessList;
-    private MediatorLiveData<List<Business>> businessLiveData = new MediatorLiveData<>();
+//    private List<Business> businessList;
+    private MutableLiveData<List<Business>> businessLiveData = new MutableLiveData<>();
     private String TAG = "Search";
 
     public void searchYelpApi(String term, String location) {
-        businessList = new ArrayList<>();
+//        businessList = new ArrayList<>();
 
         new YelpRetrofit()
                 .getRetrofitInstance()
@@ -41,7 +41,7 @@ public class SearchResultViewModel extends ViewModel {
                     Log.w(TAG, "No valid response");
                     return;
                 }
-                businessList.addAll(response.body().getBusinesses());
+//                businessList.addAll(response.body().getBusinesses());
                 businessLiveData.postValue(response.body().getBusinesses());
             }
 
@@ -52,7 +52,7 @@ public class SearchResultViewModel extends ViewModel {
         });
     }
 
-    public MediatorLiveData<List<Business>> getBusinessLiveData() {
+    public MutableLiveData<List<Business>> getBusinessLiveData() {
         return businessLiveData;
     }
 
@@ -76,7 +76,7 @@ public class SearchResultViewModel extends ViewModel {
     }
 
     public List<Business> getBusinessList() {
-        return businessList;
+        return businessLiveData.getValue();
     }
 
     public Map<String, List<Business>> getCategoryMap() {
