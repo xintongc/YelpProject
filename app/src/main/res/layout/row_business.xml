@@ -16,7 +16,7 @@
         android:background="@drawable/bg_image_border"
         android:padding="@dimen/dp3"
         android:scaleType="fitXY"
-        android:visibility="visible"
+        android:visibility="gone"
         android:layout_gravity="center_vertical"
         tools:srcCompat="@tools:sample/avatars" />
 
@@ -41,7 +41,7 @@
             android:layout_gravity="left"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="visible"
+            android:visibility="gone"
             android:progressTint="@color/design_default_color_secondary_variant"
             android:numStars="5"
             android:padding="@dimen/dp1"
@@ -55,7 +55,7 @@
             android:id="@+id/tv_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="visible"
+            android:visibility="gone"
             android:padding="@dimen/dp1"
             android:textColor="@color/black" />
 
@@ -63,7 +63,7 @@
             android:id="@+id/tv_business_category"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:visibility="visible"
+            android:visibility="gone"
             android:padding="@dimen/dp1"
             android:textColor="@color/black" />
 

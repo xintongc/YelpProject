@@ -18,6 +18,10 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -40,4 +44,12 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    testImplementation 'org.powermock:powermock-api-mockito2:2.0.5'
+    testImplementation 'org.powermock:powermock-module-junit4-rule:2.0.5'
+    testImplementation 'org.powermock:powermock-module-junit4:2.0.5'
+    androidTestImplementation 'androidx.test:core:1.4.0'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test:rules:1.4.0'
+    androidTestImplementation 'org.jetbrains:annotations:15.0'
+    androidTestImplementation 'org.jetbrains:annotations:15.0'
 }
