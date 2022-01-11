@@ -103,6 +103,8 @@ public class MainActivity extends AppCompatActivity {
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    hideSoftKeyboard(mEtLocation, MainActivity.this);
+
                     if (((TextView) view.findViewById(R.id.tv_business_category)).getVisibility() == View.GONE) {
                         ((TextView) view.findViewById(R.id.tv_business_category)).setVisibility(View.VISIBLE);
                         ((TextView) view.findViewById(R.id.tv_address)).setVisibility(View.VISIBLE);
@@ -114,7 +116,6 @@ public class MainActivity extends AppCompatActivity {
                         ((ImageView) view.findViewById(R.id.iv_imageView)).setVisibility(View.GONE);
                         ((RatingBar) view.findViewById(R.id.rb_ratingBar)).setVisibility(View.GONE);
                     }
-
                 }
             });
             mLlSearchResultList.addView(view);
