@@ -27,7 +27,8 @@ public class YelpRetrofit {
     private static class ApiKeyInterceptor implements Interceptor {
 
         @Override
-        public @NonNull Response intercept(Chain chain) throws IOException {
+        public @NonNull
+        Response intercept(Chain chain) throws IOException {
             return chain.proceed(chain.request()
                     .newBuilder()
                     .addHeader("Authorization", "Bearer " + BuildConfig.API_KEY)

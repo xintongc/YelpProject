@@ -68,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void buildViewForSearchYelpApi() {
         mViewModel.getBusinessLiveData().observe(this, response -> {
-            if(response != null) {
+            if (response != null) {
                 mViewModel.buildCategoryMap(mViewModel.getBusinessList());
                 buildViewForCategory();
             }
@@ -97,7 +97,7 @@ public class MainActivity extends AppCompatActivity {
             View view = inflater.inflate(R.layout.row_business, mLlSearchResultList, false);
             ((TextView) view.findViewById(R.id.tv_business_name)).setText(business.getName());
             ((TextView) view.findViewById(R.id.tv_address)).setText(getString(R.string.address) + business.getLocation().getAddress1());
-            ((TextView) view.findViewById(R.id.tv_business_category)).setText(getString(R.string.category) + business.getCategories().toString().substring(1, business.getCategories().toString().length() -1));
+            ((TextView) view.findViewById(R.id.tv_business_category)).setText(getString(R.string.category) + business.getCategories().toString().substring(1, business.getCategories().toString().length() - 1));
             ((RatingBar) view.findViewById(R.id.rb_ratingBar)).setRating(business.getRating().floatValue());
             Glide.with(view.getContext()).load(business.getImageUrl()).into((ImageView) view.findViewById(R.id.iv_imageView));
             view.setOnClickListener(new View.OnClickListener() {
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void hideSoftKeyboard(View view, Activity mActivity) {
-        InputMethodManager inputMethodManager = (InputMethodManager)mActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
+        InputMethodManager inputMethodManager = (InputMethodManager) mActivity.getSystemService(Context.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), InputMethodManager.SHOW_FORCED);
     }
 

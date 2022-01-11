@@ -1,4 +1,5 @@
 package com.rbc.yelp;
+
 import com.rbc.yelp.viewmodel.SearchResultViewModel;
 
 import org.junit.Before;
@@ -6,9 +7,10 @@ import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
+
 import static org.mockito.internal.verification.VerificationModeFactory.times;
 
-public class SearchResultViewModelTest{
+public class SearchResultViewModelTest {
 
     @Mock
     private SearchResultViewModel viewModel;

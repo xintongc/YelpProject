@@ -16,6 +16,7 @@ import org.junit.Assert;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.clearText;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -84,7 +85,7 @@ public class ExampleInstrumentedTest {
         };
     }
 
-    private void waitForView(@NotNull Matcher<View> viewMatcher){
+    private void waitForView(@NotNull Matcher<View> viewMatcher) {
         final int INTERVAL = 1500;
         final int TIME_OUT = 30000;
         int totalWaitingTime = 0;

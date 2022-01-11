@@ -6,6 +6,7 @@ import java.util.List;
 
 /**
  * Business model from the Yelp v3 API.
+ *
  * @see <a href=https://www.yelp.ca/developers/documentation/v3/business_search>Yelp API Business Search</a>
  */
 public class Business {

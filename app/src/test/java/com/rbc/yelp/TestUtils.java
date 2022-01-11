@@ -17,7 +17,7 @@ public class TestUtils {
         String json = null;
         try {
             InputStream is = responseClass.getClassLoader().getResourceAsStream(filePath);
-            if(is == null) {
+            if (is == null) {
                 File file = new File(RESOURCES_BASE_PATH + filePath);
                 is = new FileInputStream(file);
             }
@@ -25,7 +25,7 @@ public class TestUtils {
             byte[] buffer = new byte[size];
             is.read(buffer);
             is.close();
-            json = new String(buffer,"UTF-8");
+            json = new String(buffer, "UTF-8");
         } catch (IOException ex) {
             fail("Error to read Json file");
         }
